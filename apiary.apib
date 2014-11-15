@@ -72,7 +72,23 @@ A single Form object with all its details
 
 + Parameters
     + form_id (required, string, `53c3dbdd72530e32f7503347`) ... Hash string `id` of the Form to perform action with. Has example value.
-   
+
+
+### List all Forms [GET]
++ Response 200 (application/json)
+
+        {"entries":
+            [
+                { 
+                    "email": "danielbultas@gmail.com",
+                    "message": "ahoj jak se mas?"
+                },
+                { 
+                    "email": "smita@gmail.com",
+                    "message": "dobry den!"
+                }
+            ]
+        }
 
 ### Create new entry [POST]
 + Request (application/json)
