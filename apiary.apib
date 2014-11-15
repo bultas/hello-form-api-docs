@@ -1,0 +1,90 @@
+FORMAT: 1A
+VERSION: 0.1.0
+
+# Hello Form
+Create Simple forms
+
+
+# Group Forms
+
+## Forms [/forms]
+### List all Forms [GET]
++ Response 200 (application/json)
+
+        {"forms":
+            [
+                { 
+                    "id": "53ba7fc872530e577f35c699", 
+                    "name": "Form uno"
+                },
+                { 
+                    "id": "53c3dbdd72530e32f7503347", 
+                    "name": "Form duo"
+                }
+            ]
+        }
+        
+
+### Create a Form [POST]
++ Request (application/json)
+
+        { "name": "Form name" }
+
++ Response 201 (application/json)
+
+        { 
+            "id": "53ba7fc872530e577f35c699", 
+            "name": "Form uno"
+        }
+
+        
+## Form [/forms/{form_id}]
+A single Form object with all its details
+
++ Parameters
+    + form_id (required, string, `53c3dbdd72530e32f7503347`) ... Hash string `id` of the Form to perform action with. Has example value.
+
+### Retrieve a Form [GET]
++ Response 200 (application/json)
+
+        { 
+            "id": "53ba7fc872530e577f35c699", 
+            "name": "Form uno"
+        }
+        
+### Update a Form [PUT]
++ Request (application/json)
+
+        { 
+            "id": "53ba7fc872530e577f35c699", 
+            "name": "Form change"
+        }
+        
++ Response 200 (application/json)
+
+        { 
+            "id": "53ba7fc872530e577f35c699", 
+            "name": "Form change"
+        }
+        
+
+## Entries [/forms/{form_id}/entries]
+
++ Parameters
+    + form_id (required, string, `53c3dbdd72530e32f7503347`) ... Hash string `id` of the Form to perform action with. Has example value.
+   
+
+### Create new entry [POST]
++ Request (application/json)
+
+        { 
+            "email": "danielbultas@gmail.com",
+            "message": "ahoj jak se mas?"
+        }
+
++ Response 201 (application/json)
+
+        { 
+            "email": "danielbultas@gmail.com",
+            "message": "ahoj jak se mas?"
+        }
